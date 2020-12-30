@@ -1,0 +1,17 @@
+= Cheatsheets
+
+[[SaveIncomingMessageData]]
+== SaveIncomingMessageData
+
+
+[cols=">25%,^25%,50%"]
+[frame="topbot"]
+|===
+^|Name | Type ^| Description
+|[[deviceId]]`deviceId`|`String`|-
+|[[message]]`message`|`String`|-
+|[[source]]`source`|`String`|-
+|[[timeuuid]]`timeuuid`|`String`|-
+|[[type]]`type`|`String`|-
+|===
+
