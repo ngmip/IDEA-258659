@@ -33,8 +33,15 @@ import io.vertx.serviceproxy.ProxyHelper;
 import io.vertx.serviceproxy.ServiceException;
 import io.vertx.serviceproxy.ServiceExceptionMessageCodec;
 import com.tmgateway.message.model.SaveIncomingMessageData;
+import com.tmgateway.message.model.IncomingUuidMessageResponse;
+import com.tmgateway.message.model.DecodedMessageQueryParameter;
 import io.vertx.core.Vertx;
+import com.tmgateway.message.model.IncomingMessageResponse;
+import io.vertx.core.AsyncResult;
+import io.vertx.core.Handler;
+import com.tmgateway.message.model.DecodedMessageResponse;
 import com.tmgateway.message.api.proxy.IncomingMessageService;
+import com.tmgateway.message.model.IncomingMessageQueryParameter;
 
 /*
   Generated Proxy code - DO NOT EDIT
@@ -72,6 +79,63 @@ public class IncomingMessageServiceVertxEBProxy implements IncomingMessageServic
     DeliveryOptions _deliveryOptions = (_options != null) ? new DeliveryOptions(_options) : new DeliveryOptions();
     _deliveryOptions.addHeader("action", "saveIncoming");
     _vertx.eventBus().send(_address, _json, _deliveryOptions);
+  }
+
+  @Override
+  public void retrieveIncomingMessageByUUID(IncomingMessageQueryParameter queryParameters, Handler<AsyncResult<IncomingUuidMessageResponse>> resultHandler) {
+    if (closed) {
+    resultHandler.handle(Future.failedFuture(new IllegalStateException("Proxy is closed")));
+      return;
+    }
+    JsonObject _json = new JsonObject();
+    _json.put("queryParameters", queryParameters == null ? null : queryParameters.toJson());
+    DeliveryOptions _deliveryOptions = (_options != null) ? new DeliveryOptions(_options) : new DeliveryOptions();
+    _deliveryOptions.addHeader("action", "retrieveIncomingMessageByUUID");
+    _vertx.eventBus().<JsonObject>send(_address, _json, _deliveryOptions, res -> {
+      if (res.failed()) {
+        resultHandler.handle(Future.failedFuture(res.cause()));
+      } else {
+        resultHandler.handle(Future.succeededFuture(res.result().body() == null ? null : new IncomingUuidMessageResponse(res.result().body())));
+                      }
+    });
+  }
+
+  @Override
+  public void retrieveIncomingMessages(IncomingMessageQueryParameter queryParameters, Handler<AsyncResult<IncomingMessageResponse>> resultHandler) {
+    if (closed) {
+    resultHandler.handle(Future.failedFuture(new IllegalStateException("Proxy is closed")));
+      return;
+    }
+    JsonObject _json = new JsonObject();
+    _json.put("queryParameters", queryParameters == null ? null : queryParameters.toJson());
+    DeliveryOptions _deliveryOptions = (_options != null) ? new DeliveryOptions(_options) : new DeliveryOptions();
+    _deliveryOptions.addHeader("action", "retrieveIncomingMessages");
+    _vertx.eventBus().<JsonObject>send(_address, _json, _deliveryOptions, res -> {
+      if (res.failed()) {
+        resultHandler.handle(Future.failedFuture(res.cause()));
+      } else {
+        resultHandler.handle(Future.succeededFuture(res.result().body() == null ? null : new IncomingMessageResponse(res.result().body())));
+                      }
+    });
+  }
+
+  @Override
+  public void retrieveDecodedMessages(DecodedMessageQueryParameter queryParameters, Handler<AsyncResult<DecodedMessageResponse>> resultHandler) {
+    if (closed) {
+    resultHandler.handle(Future.failedFuture(new IllegalStateException("Proxy is closed")));
+      return;
+    }
+    JsonObject _json = new JsonObject();
+    _json.put("queryParameters", queryParameters == null ? null : queryParameters.toJson());
+    DeliveryOptions _deliveryOptions = (_options != null) ? new DeliveryOptions(_options) : new DeliveryOptions();
+    _deliveryOptions.addHeader("action", "retrieveDecodedMessages");
+    _vertx.eventBus().<JsonObject>send(_address, _json, _deliveryOptions, res -> {
+      if (res.failed()) {
+        resultHandler.handle(Future.failedFuture(res.cause()));
+      } else {
+        resultHandler.handle(Future.succeededFuture(res.result().body() == null ? null : new DecodedMessageResponse(res.result().body())));
+                      }
+    });
   }
 
 

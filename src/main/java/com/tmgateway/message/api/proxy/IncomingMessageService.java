@@ -1,8 +1,13 @@
+/**
+ *
+ */
 package com.tmgateway.message.api.proxy;
 
-import com.tmgateway.message.model.SaveIncomingMessageData;
+import com.tmgateway.message.model.*;
 import io.vertx.codegen.annotations.ProxyGen;
 import io.vertx.codegen.annotations.VertxGen;
+import io.vertx.core.AsyncResult;
+import io.vertx.core.Handler;
 import io.vertx.core.Vertx;
 import io.vertx.serviceproxy.ServiceProxyBuilder;
 
@@ -18,4 +23,10 @@ public interface IncomingMessageService {
     }
 
     void saveIncoming(SaveIncomingMessageData incoming);
+
+    void retrieveIncomingMessageByUUID(IncomingMessageQueryParameter queryParameters, Handler<AsyncResult<IncomingUuidMessageResponse>> resultHandler);
+
+    void retrieveIncomingMessages(IncomingMessageQueryParameter queryParameters, Handler<AsyncResult<IncomingMessageResponse>> resultHandler);
+
+    void retrieveDecodedMessages(DecodedMessageQueryParameter queryParameters, Handler<AsyncResult<DecodedMessageResponse>> resultHandler);
 }

@@ -1,5 +1,135 @@
 = Cheatsheets
 
+[[DecodedMessage]]
+== DecodedMessage
+
+
+[cols=">25%,^25%,50%"]
+[frame="topbot"]
+|===
+^|Name | Type ^| Description
+|[[message]]`message`|`String`|
++++
+
++++
+|[[sequence]]`sequence`|`Number (int)`|
++++
+
++++
+|[[timestamp]]`timestamp`|`String`|
++++
+
++++
+|===
+
+[[DecodedMessageQueryParameter]]
+== DecodedMessageQueryParameter
+
+
+[cols=">25%,^25%,50%"]
+[frame="topbot"]
+|===
+^|Name | Type ^| Description
+|[[deviceId]]`deviceId`|`String`|-
+|[[fromDate]]`fromDate`|`String`|-
+|[[limit]]`limit`|`Number (Integer)`|-
+|[[profile]]`profile`|`String`|-
+|[[sortOrder]]`sortOrder`|`String`|-
+|[[start]]`start`|`Number (Integer)`|-
+|[[toDate]]`toDate`|`String`|-
+|[[uuid]]`uuid`|`String`|-
+|===
+
+[[DecodedMessageResponse]]
+== DecodedMessageResponse
+
+
+[cols=">25%,^25%,50%"]
+[frame="topbot"]
+|===
+^|Name | Type ^| Description
+|[[fetchSize]]`fetchSize`|`Number (int)`|-
+|[[messages]]`messages`|`Array of link:dataobjects.html#DecodedMessage[DecodedMessage]`|-
+|[[total]]`total`|`Number (long)`|-
+|===
+
+[[IncomingMessage]]
+== IncomingMessage
+
+
+[cols=">25%,^25%,50%"]
+[frame="topbot"]
+|===
+^|Name | Type ^| Description
+|[[deviceId]]`deviceId`|`String`|-
+|[[message]]`message`|`String`|-
+|[[source]]`source`|`String`|-
+|[[timestamp]]`timestamp`|`String`|-
+|[[type]]`type`|`String`|-
+|===
+
+[[IncomingMessageQueryParameter]]
+== IncomingMessageQueryParameter
+
+
+[cols=">25%,^25%,50%"]
+[frame="topbot"]
+|===
+^|Name | Type ^| Description
+|[[deviceId]]`deviceId`|`String`|-
+|[[fromDate]]`fromDate`|`String`|-
+|[[limit]]`limit`|`Number (Integer)`|-
+|[[sortOrder]]`sortOrder`|`String`|-
+|[[start]]`start`|`Number (Integer)`|-
+|[[toDate]]`toDate`|`String`|-
+|[[uuid]]`uuid`|`String`|-
+|===
+
+[[IncomingMessageResponse]]
+== IncomingMessageResponse
+
+
+[cols=">25%,^25%,50%"]
+[frame="topbot"]
+|===
+^|Name | Type ^| Description
+|[[fetchSize]]`fetchSize`|`Number (int)`|-
+|[[messages]]`messages`|`Array of link:dataobjects.html#IncomingMessage[IncomingMessage]`|-
+|[[total]]`total`|`Number (long)`|-
+|===
+
+[[IncomingUuidMessageResponse]]
+== IncomingUuidMessageResponse
+
+++++
+++++
+'''
+
+[cols=">25%,^25%,50%"]
+[frame="topbot"]
+|===
+^|Name | Type ^| Description
+|[[message]]`message`|`String`|-
+|[[timestamp]]`timestamp`|`String`|-
+|[[type]]`type`|`String`|-
+|===
+
+[[SaveDecodedMessageData]]
+== SaveDecodedMessageData
+
+
+[cols=">25%,^25%,50%"]
+[frame="topbot"]
+|===
+^|Name | Type ^| Description
+|[[decoded]]`decoded`|`String`|-
+|[[deviceId]]`deviceId`|`String`|-
+|[[profiles]]`profiles`|`Array of String`|-
+|[[sequence]]`sequence`|`Number (Integer)`|-
+|[[timeuuid]]`timeuuid`|`String`|-
+|[[type]]`type`|`String`|-
+|===
+
 [[SaveIncomingMessageData]]
 == SaveIncomingMessageData
 
