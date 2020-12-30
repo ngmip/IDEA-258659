@@ -1,6 +1,6 @@
 # Introduction
 
-This sample project only exists to illustrate the issue IDEA-258659 of intelliJ
+This sample project only exists to illustrate the issue [IDEA-258659](https://youtrack.jetbrains.com/issue/IDEA-258659) of IntelliJ
 Since the version 2020.3 this sample project cannot be built by the IDE when it can with former (2020.2.4) or by maven.
 
 # How it works
